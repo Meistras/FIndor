@@ -1,0 +1,41 @@
+format = json
+action = query
+prop = extracts
+exlimit = _LIMIT_ (ussualy 1)
+titles = _KEYWORDS_ 
+redirects = true (fix bad keywords)
+
+
+/////////////////////////////////////////////////////////////////////
+Communitcation between extension and server
+
+***use CORS requests*** 
+IMPORTANT: add the php server domain to permissions tag in manifest.json file
+***
+Setting up a server for CORS request requires an .htaccess file with headers 
+***
+
+FOR wiki api titles keywords use javascript in the extension to extract the current page (modeled by wiki) title, which can be put into titles parse.
+
+//AMAZON
+http://webservices.amazon.com/onca/xml?
+Service=AWSECommerceService&
+AWSAccessKeyId=[AWS Access Key ID]&
+AssociateTag=[Associate ID]&  
+Operation=ItemSearch&
+Keywords=the%20hunger%20games&
+SearchIndex=Books
+&Timestamp=[YYYY-MM-DDThh:mm:ssZ]
+&Signature=[Request Signature]
+
+
+http://webservices.amazon.com/onca/xml?
+Service=AWSECommerceService&
+AWSAccessKeyId=AKIAJGGJOSZ4IHJDZ7ZA&
+Operation=ItemSearch&
+Keywords=the%20hunger%20games&
+SearchIndex=Books&
+Signature=
+
+AWS access key: AKIAJGGJOSZ4IHJDZ7ZA
+Secret access key: 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
